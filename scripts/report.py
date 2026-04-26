@@ -1,12 +1,34 @@
 #!/usr/bin/env python3
 """Format pump bot report for Telegram output. Called by pump_bot.sh."""
-import json, subprocess as sp, sys
+import json, subprocess as sp, sys, os
 
 data_dir = sys.argv[1]
 trade = json.load(open(data_dir + "/trade_latest.json"))
 state = json.load(open(data_dir + "/state.json"))
 scan = json.load(open(data_dir + "/scan_latest.json"))
 bot_type = sys.argv[2] if len(sys.argv) > 2 else "long"
+
+# Silence holds when nothing changed
+should_skip = False
+if trade.get("position_check") and trade["position_check"]["action"] == "hold":
+    # Check previous state
+    skip_path = data_dir + "/.skip_cache.json"
+    pc = trade["position_check"]
+    pnl = round(pc.get("pnl_pct", 0), 2)
+    sym = (state.get("active_position") or {}).get("symbol", "")
+    previous = {}
+    if os.path.exists(skip_path):
+        try: previous = json.load(open(skip_path))
+        except: pass
+    if previous.get("symbol") == sym and previous.get("pnl") == pnl and previous.get("action") == "hold":
+        should_skip = True
+    # Also skip if there are no candidates AND we already know
+    if not scan.get("candidates") and previous.get("symbol") == sym and previous.get("no_candidates"):
+        should_skip = True
+    json.dump({"symbol": sym, "pnl": pnl, "action": "hold", "no_candidates": not bool(scan.get("candidates"))}, open(skip_path, "w"))
+
+if should_skip:
+    sys.exit(0)
 
 def _s(val):
     """Round score to int if float."""

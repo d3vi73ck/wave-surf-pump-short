@@ -1,6 +1,6 @@
 {
   "btc_mood": {
-    "btc_price": 78056.7,
+    "btc_price": 78055.7,
     "4h_change_pct": 0.07,
     "mood": "neutral",
     "penalty": 0,
@@ -13,40 +13,35 @@
       "symbol": "OGNUSDT",
       "entry_price": 0.02367,
       "entry_score": 110,
-      "pnl_pct": -0.41,
-      "elapsed_seconds": 944,
+      "pnl_pct": -0.79,
+      "elapsed_seconds": 1499,
       "5m_momentum": {
         "last_5m_green": false,
         "last_two_5m_green": false,
         "5m_green_streak": 1,
         "5m_vol_ratio": 0.0,
-        "5m_price_change_pct": -0.21
+        "5m_price_change_pct": 0.0
       },
       "stop_pct": -4.0
     },
-    "long_candidates": [
-      {
-        "symbol": "OGNUSDT",
-        "score": 90
-      }
-    ]
+    "long_candidates": []
   },
   "scan_top3": [
     "OGNUSDT"
   ],
   "scan_top_scores": [
-    50
+    20
   ],
   "position_check": {
     "action": "hold",
     "reason": "",
-    "bid": 0.486,
-    "ask": 0.487,
-    "mid": 0.4865,
-    "spread_pct": 0.21,
-    "pnl_pct": -0.2,
+    "bid": 0.488,
+    "ask": 0.489,
+    "mid": 0.4885,
+    "spread_pct": 0.2,
+    "pnl_pct": -0.61,
     "stop_pct": -3.0,
-    "elapsed_seconds": 506,
+    "elapsed_seconds": 1262,
     "entry_score": 85.46000000000001,
     "lowest_price": 0.4845
   }
