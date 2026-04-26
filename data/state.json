@@ -1,5 +1,16 @@
 {
-  "active_position": null,
+  "active_position": {
+    "symbol": "UMAUSDT",
+    "side": "DOWN",
+    "entry_price": 0.488,
+    "entry_bid_price": 0.487,
+    "entry_score": 85.46000000000001,
+    "size": 0.001,
+    "lowest_price": 0.488,
+    "stop_pct": -3.0,
+    "opened_at_unix": 1777216724,
+    "opened_at": "2026-04-26T15:18:44Z"
+  },
   "total_trades": 1,
   "wins": 1
 }
