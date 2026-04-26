@@ -1,11 +1,52 @@
 {
+  "btc_mood": {
+    "btc_price": 78101.6,
+    "4h_change_pct": 0.13,
+    "mood": "neutral",
+    "penalty": 0,
+    "hard_block_short": false,
+    "green_candles_out_of_4": 3
+  },
+  "long_signals": {
+    "long_position": {
+      "symbol": "SFPUSDT",
+      "entry_price": 0.3476,
+      "entry_score": 80,
+      "pnl_pct": -2.13,
+      "elapsed_seconds": 4800,
+      "5m_momentum": {
+        "last_5m_green": false,
+        "last_two_5m_green": false,
+        "5m_green_streak": 0,
+        "5m_vol_ratio": 0.0,
+        "5m_price_change_pct": -0.12
+      },
+      "stop_pct": -4.0
+    },
+    "long_candidates": [
+      {
+        "symbol": "OGNUSDT",
+        "score": 75
+      }
+    ]
+  },
+  "scan_top3": [
+    "OGNUSDT"
+  ],
+  "scan_top_scores": [
+    92.4
+  ],
   "position_check": {
     "action": "hold",
     "reason": "",
-    "current_price": 0.2696,
-    "pnl_pct": 0.0,
-    "stop_pct": -4.0,
-    "highest_price": 0.2696,
-    "elapsed_seconds": 4497
+    "bid": 0.02366,
+    "ask": 0.02371,
+    "mid": 0.023684999999999998,
+    "spread_pct": 0.21,
+    "pnl_pct": -0.03,
+    "stop_pct": -3.0,
+    "lowest_price": 0.023684999999999998,
+    "elapsed_seconds": 91,
+    "entry_score": 99.7
   }
 }

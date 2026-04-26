@@ -1,5 +1,33 @@
 {
-  "timestamp": "2026-04-25T19:03:36Z",
-  "candidates": [],
-  "scanned_count": 291
+  "timestamp": "2026-04-26T15:09:43Z",
+  "candidates": [
+    {
+      "symbol": "OGNUSDT",
+      "price": 0.02354,
+      "volume_24h_usd": 395046,
+      "score": 92.4,
+      "max_vol_spike_ratio": 49.6,
+      "price_change_1h_pct": 1.2,
+      "price_change_current_1h": 1.2,
+      "buy_sell_ratio": 1.46,
+      "order_book_ratio": 1.05,
+      "5m_momentum": {
+        "last_5m_green": false,
+        "last_two_5m_green": false,
+        "5m_green_streak": 1,
+        "5m_vol_ratio": 1433.3,
+        "5m_price_change_pct": -1.82
+      }
+    }
+  ],
+  "scanned_count": 100,
+  "strategy": "short_v1",
+  "btc_mood": {
+    "btc_price": 78101.6,
+    "4h_change_pct": 0.13,
+    "mood": "neutral",
+    "penalty": 0,
+    "hard_block_short": false,
+    "green_candles_out_of_4": 3
+  }
 }

@@ -1,6 +1,14 @@
 {
-  "active_position": null,
-  "total_trades": 0,
-  "wins": 0,
-  "losses": 0
+  "active_position": {
+    "symbol": "OGNUSDT",
+    "side": "DOWN",
+    "entry_price": 0.023780000000000003,
+    "entry_bid_price": 0.02375,
+    "entry_score": 99.7,
+    "size": 0.001,
+    "lowest_price": 0.023684999999999998,
+    "stop_pct": -3.0,
+    "opened_at_unix": 1777216093,
+    "opened_at": "2026-04-26T15:08:13Z"
+  }
 }
