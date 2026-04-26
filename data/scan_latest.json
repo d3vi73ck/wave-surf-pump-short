@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-04-26T15:18:44Z",
+  "timestamp": "2026-04-26T15:27:10Z",
   "candidates": [
     {
-      "symbol": "UMAUSDT",
-      "price": 0.489,
-      "volume_24h_usd": 945867,
-      "score": 85.46000000000001,
-      "max_vol_spike_ratio": 22.3,
-      "price_change_1h_pct": 2.73,
-      "price_change_current_1h": 2.73,
-      "buy_sell_ratio": 0.14,
-      "order_book_ratio": 2.56,
+      "symbol": "OGNUSDT",
+      "price": 0.02363,
+      "volume_24h_usd": 428254,
+      "score": 50,
+      "max_vol_spike_ratio": 57.1,
+      "price_change_1h_pct": 1.5,
+      "buy_sell_ratio": 0.38,
+      "order_book_ratio": 1.54,
       "5m_momentum": {
-        "last_5m_green": false,
-        "last_two_5m_green": false,
+        "last_5m_green": true,
+        "last_two_5m_green": true,
         "5m_green_streak": 2,
-        "5m_vol_ratio": 2.3,
-        "5m_price_change_pct": -0.41
+        "5m_vol_ratio": 0.1,
+        "5m_price_change_pct": 0.17
       }
     }
   ],
   "scanned_count": 100,
-  "strategy": "short_v1",
+  "strategy": "short_v12",
   "btc_mood": {
-    "btc_price": 78114.4,
-    "4h_change_pct": 0.14,
+    "btc_price": 78056.7,
+    "4h_change_pct": 0.07,
     "mood": "neutral",
     "penalty": 0,
+    "hard_block": false,
     "hard_block_short": false,
-    "green_candles_out_of_4": 3
+    "green_candles_out_of_4": 2
   }
 }

@@ -1,63 +1,53 @@
 {
   "btc_mood": {
-    "btc_price": 78114.4,
-    "4h_change_pct": 0.14,
+    "btc_price": 78056.7,
+    "4h_change_pct": 0.07,
     "mood": "neutral",
     "penalty": 0,
+    "hard_block": false,
     "hard_block_short": false,
-    "green_candles_out_of_4": 3
+    "green_candles_out_of_4": 2
   },
   "long_signals": {
     "long_position": {
       "symbol": "OGNUSDT",
       "entry_price": 0.02367,
       "entry_score": 110,
-      "pnl_pct": 0.05,
-      "elapsed_seconds": 345,
+      "pnl_pct": -0.41,
+      "elapsed_seconds": 944,
       "5m_momentum": {
-        "last_5m_green": true,
-        "last_two_5m_green": true,
-        "5m_green_streak": 2,
-        "5m_vol_ratio": 0.1,
-        "5m_price_change_pct": 0.68
+        "last_5m_green": false,
+        "last_two_5m_green": false,
+        "5m_green_streak": 1,
+        "5m_vol_ratio": 0.0,
+        "5m_price_change_pct": -0.21
       },
       "stop_pct": -4.0
     },
     "long_candidates": [
       {
         "symbol": "OGNUSDT",
-        "score": 100
-      },
-      {
-        "symbol": "UMAUSDT",
-        "score": 80
+        "score": 90
       }
     ]
   },
   "scan_top3": [
-    "UMAUSDT"
+    "OGNUSDT"
   ],
   "scan_top_scores": [
-    85.46000000000001
+    50
   ],
-  "entered": {
-    "entered": true,
-    "symbol": "UMAUSDT",
-    "price_mid": 0.488,
-    "price_bid": 0.487,
-    "score": 85.46000000000001,
-    "volume_24h_usd": 945867,
-    "vol_spike_ratio": 22.3,
-    "buy_sell_ratio": 0.14,
-    "order_book_ratio": 2.56,
-    "5m_momentum": {
-      "last_5m_green": false,
-      "last_two_5m_green": false,
-      "5m_green_streak": 2,
-      "5m_vol_ratio": 2.3,
-      "5m_price_change_pct": -0.41
-    },
-    "spread_at_entry": 0.41
-  },
-  "entry_reason": "new_signal_85.46000000000001"
+  "position_check": {
+    "action": "hold",
+    "reason": "",
+    "bid": 0.486,
+    "ask": 0.487,
+    "mid": 0.4865,
+    "spread_pct": 0.21,
+    "pnl_pct": -0.2,
+    "stop_pct": -3.0,
+    "elapsed_seconds": 506,
+    "entry_score": 85.46000000000001,
+    "lowest_price": 0.4845
+  }
 }
