@@ -1,52 +1,67 @@
 {
   "btc_mood": {
-    "btc_price": 78101.6,
-    "4h_change_pct": 0.13,
+    "btc_price": 78088.2,
+    "4h_change_pct": 0.11,
     "mood": "neutral",
     "penalty": 0,
     "hard_block_short": false,
-    "green_candles_out_of_4": 3
+    "green_candles_out_of_4": 2
   },
   "long_signals": {
     "long_position": {
-      "symbol": "SFPUSDT",
-      "entry_price": 0.3476,
-      "entry_score": 80,
-      "pnl_pct": -2.13,
-      "elapsed_seconds": 4800,
+      "symbol": "OGNUSDT",
+      "entry_price": 0.02367,
+      "entry_score": 110,
+      "pnl_pct": -0.37,
+      "elapsed_seconds": 291,
       "5m_momentum": {
         "last_5m_green": false,
         "last_two_5m_green": false,
-        "5m_green_streak": 0,
+        "5m_green_streak": 1,
         "5m_vol_ratio": 0.0,
-        "5m_price_change_pct": -0.12
+        "5m_price_change_pct": 0.0
       },
       "stop_pct": -4.0
     },
     "long_candidates": [
       {
         "symbol": "OGNUSDT",
-        "score": 75
+        "score": 110
+      },
+      {
+        "symbol": "UMAUSDT",
+        "score": 70
       }
     ]
   },
   "scan_top3": [
-    "OGNUSDT"
+    "OGNUSDT",
+    "UMAUSDT"
   ],
   "scan_top_scores": [
-    92.4
+    47.47999999999999,
+    25.880000000000003
   ],
   "position_check": {
-    "action": "hold",
-    "reason": "",
+    "action": "exit",
+    "reason": "conflict_LONG_entered_OGNUSDT_pnl_0.01%",
     "bid": 0.02366,
-    "ask": 0.02371,
-    "mid": 0.023684999999999998,
-    "spread_pct": 0.21,
-    "pnl_pct": -0.03,
+    "ask": 0.0237,
+    "mid": 0.02368,
+    "spread_pct": 0.17,
+    "pnl_pct": 0.01,
     "stop_pct": -3.0,
-    "lowest_price": 0.023684999999999998,
-    "elapsed_seconds": 91,
+    "lowest_price": 0.023649999999999997,
+    "elapsed_seconds": 448,
     "entry_score": 99.7
+  },
+  "closed": true,
+  "symbol": "OGNUSDT",
+  "exit_ask": 0.0237,
+  "pnl_pct": 0.01,
+  "reason": "conflict_LONG_entered_OGNUSDT_pnl_0.01%",
+  "evaluation": {
+    "action": "skip",
+    "reason": "no_candidate_above_50"
   }
 }

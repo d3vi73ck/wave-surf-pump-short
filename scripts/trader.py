@@ -639,9 +639,18 @@ def execute():
     result["scan_top3"] = [c["symbol"] for c in fresh_candidates[:3]]
     result["scan_top_scores"] = [c["score"] for c in fresh_candidates[:3]]
 
-    # ── Check position ──
+    # ── Check position (with LONG conflict resolve) ──
     if state.get("active_position"):
         pos_check, switch_target = check_position(state, fresh_candidates)
+        ap_sym = state["active_position"]["symbol"]
+        long_sym = (shared.get("long_position") or {}).get("symbol") if shared else None
+        
+        # If LONG just entered our short position's sym, force exit
+        if long_sym and ap_sym == long_sym and pos_check["action"] != "exit":
+            pos_check["action"] = "exit"
+            pos_check["reason"] = f"conflict_LONG_entered_{long_sym}_pnl_{pos_check.get('pnl_pct',0)}%"
+            switch_target = None
+            
         result["position_check"] = pos_check
 
         if pos_check["action"] == "exit":
@@ -649,8 +658,12 @@ def execute():
             result.update(close_result)
 
             if switch_target:
-                entry_info = open_position(state, switch_target)
-                result["switch_entered"] = entry_info
+                # Also check switch target not held by LONG
+                if long_sym and switch_target["symbol"] == long_sym:
+                    result["evaluation"] = {"action": "skip", "reason": f"conflict_LONG_holds_{long_sym}"}
+                else:
+                    entry_info = open_position(state, switch_target)
+                    result["switch_entered"] = entry_info
 
         elif pos_check["action"] == "hold":
             state["active_position"]["lowest_price"] = min(
@@ -660,13 +673,20 @@ def execute():
         # Write signals
         write_short_signals(state, pos_check, fresh_candidates)
 
-    # ── Enter new ──
+    # ── Enter new (with LONG conflict check) ──
     if not state.get("active_position"):
+        long_sym = (shared.get("long_position") or {}).get("symbol") if shared else None
         if fresh_candidates and fresh_candidates[0]["score"] >= MIN_SCORE_TO_TRADE:
             best = fresh_candidates[0]
-            entry_info = open_position(state, best)
-            result["entered"] = entry_info
-            result["entry_reason"] = f"new_signal_{best['score']}"
+            if long_sym and best["symbol"] == long_sym:
+                result["evaluation"] = {
+                    "action": "skip",
+                    "reason": f"conflict_LONG_holds_{long_sym}",
+                }
+            else:
+                entry_info = open_position(state, best)
+                result["entered"] = entry_info
+                result["entry_reason"] = f"new_signal_{best['score']}"
         else:
             result["evaluation"] = {
                 "action": "skip",
